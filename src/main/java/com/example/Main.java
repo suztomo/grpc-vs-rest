@@ -6,11 +6,17 @@ import com.google.cloud.resourcemanager.v3.ProjectsSettings;
 
 public class Main {
 
+  /**
+   * Runs client initialization and one RPC call via ProjectsClient.
+   *
+   * @param arguments "rest" to use HTTP backend; otherwise it uses gRPC backend.
+   */
   public static void main(String[] arguments) throws Exception {
     long beforeClientCreation = System.currentTimeMillis();
     // Application Default Credentials
-    ProjectsSettings projectsSettings = ProjectsSettings.newHttpJsonBuilder().build();
-    try (ProjectsClient client = ProjectsClient.create(projectsSettings)) {
+    ProjectsSettings.Builder projectsSettings =  (arguments.length == 1 && "rest".equals(arguments[0])) ?
+        ProjectsSettings.newHttpJsonBuilder() : ProjectsSettings.newBuilder();
+    try (ProjectsClient client = ProjectsClient.create(projectsSettings.build())) {
       long timeTakenForCreation = System.currentTimeMillis() - beforeClientCreation;
       System.out.println(
           "client initialization: " + client + " took " + timeTakenForCreation + " ms.");
