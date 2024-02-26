@@ -12,6 +12,7 @@ public class Main {
    * @param arguments "rest" to use HTTP backend; otherwise it uses gRPC backend.
    */
   public static void main(String[] arguments) throws Exception {
+    Thread.sleep(2000);
     long beforeClientCreation = System.currentTimeMillis();
     // Application Default Credentials
     ProjectsSettings.Builder projectsSettings =  (arguments.length == 1 && "rest".equals(arguments[0])) ?
