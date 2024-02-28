@@ -25,7 +25,9 @@ client initialization: com.google.cloud.resourcemanager.v3.ProjectsClient@6d7635
 client.getProject returned cloud-java-ci-sample in 795 ms.
 ```
 
-When you pass "apiary" as the program arguments, it uses Apiary backend.
+When you pass "apiary" as the program arguments, it uses Apiary
+([google-api-client](https://github.com/googleapis/google-api-java-client/))
+backend.
 
 ## Logging
 
