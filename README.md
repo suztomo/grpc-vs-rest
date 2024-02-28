@@ -25,6 +25,8 @@ client initialization: com.google.cloud.resourcemanager.v3.ProjectsClient@6d7635
 client.getProject returned cloud-java-ci-sample in 795 ms.
 ```
 
+When you pass "apiary" as the program arguments, it uses Apiary backend.
+
 ## Logging
 
 To enable logging, pass the logging.properties file to the java command.
